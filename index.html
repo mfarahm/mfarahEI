@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
@@ -156,10 +156,10 @@ body::before {
   padding:10px 16px;border-radius:14px;
   box-shadow:0 0 18px rgba(9,127,130,.1);transition:all .3s;
 }
-  
+
 .event-info-item:hover{border-color:var(--teal-light);box-shadow:0 0 25px rgba(9,127,130,.25);}
-.event-info-item.date-box,.event-info-item.time-box{flex:1;max-width:260px;}
-.event-info-item.loc-box{flex:1;max-width:534px;width:100%;}
+.event-info-item.date-box,.event-info-item.time-box{flex:1;min-height: 62px;}
+.event-info-item.loc-box{flex:1;min-height: 62px;width:100%;}
 
 .event-info-icon{font-size:1.3rem;flex-shrink:0;}
 .event-info-icon.location{color:#26e0b5;}
@@ -210,8 +210,18 @@ body::before {
 .input-row input[type="text"]:focus{border-color:var(--gold-light);box-shadow:0 0 15px rgba(162,134,21,.3);}
 textarea#congrats-text{width:100%;min-height:80px;background:rgba(255,255,255,.05);border:1px solid rgba(162,134,21,.4);border-radius:10px;padding:12px 18px;color:#fff;font-family:'Cairo',sans-serif;outline:none;font-size:1rem;resize:vertical;line-height:1.6;}
 textarea#congrats-text:focus{border-color:var(--gold-light);box-shadow:0 0 15px rgba(162,134,21,.3);}
-.congrats-send-row{display:flex;justify-content:flex-end;margin-top:8px;}
-.congrats-btn{background:var(--gold);color:var(--bg-deep);border:none;border-radius:10px;padding:10px 28px;font-weight:700;cursor:pointer;transition:all .3s ease;font-family:'Cairo',sans-serif;font-size:.95rem;}
+.congrats-send-row { display:flex; justify-content:center; margin-top:8px; }
+.congrats-btn {
+  background:var(--gold);
+  color:var(--bg-deep);
+  border:none; border-radius:10px;
+  padding:6px 0;
+  font-weight:700; cursor:pointer;
+  transition:all .3s ease;
+  font-family:'Cairo',sans-serif;
+  font-size:.95rem;
+  width:100%;
+}
 .congrats-btn:hover{background:var(--gold-light);transform:scale(1.03);}
 
 /* ── comment list: slightly wider ── */
@@ -248,7 +258,17 @@ textarea#congrats-text:focus{border-color:var(--gold-light);box-shadow:0 0 15px 
 .share-section{text-align:center;margin:30px 0;}
 .share-title{font-size:.8rem;color:var(--text-dim);margin-bottom:14px;letter-spacing:3px;}
 .share-buttons{display:flex;justify-content:center;gap:12px;flex-wrap:nowrap;}
-.share-btn{text-decoration:none;width:52px;height:52px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;transition:all .3s ease;flex-shrink:0;overflow:hidden;background:#111;border:1px solid rgba(255,255,255,.1);}
+.share-btn {
+  text-decoration:none;
+  width:52px; height:52px;
+  border-radius:50%;
+  display:inline-flex;
+  align-items:center; justify-content:center;
+  transition:all .3s ease;
+  flex-shrink:0; overflow:hidden;
+  background:transparent;
+  border:none;
+}
 .share-btn img{width:50px;height:50px;object-fit:contain;border-radius:6px;}
 .share-btn:hover{transform:translateY(-3px) scale(1.1);box-shadow:0 6px 18px rgba(0,0,0,.35);}
 
@@ -380,6 +400,7 @@ textarea#congrats-text:focus{border-color:var(--gold-light);box-shadow:0 0 15px 
     </div>
   </div>
 
+
   <!-- DISCUSSION COMMITTEE -->
   <div class="section-header"><h3>◈ لجنة المناقشة والحكم ◈</h3></div>
   <div class="committee-grid">
@@ -425,6 +446,7 @@ textarea#congrats-text:focus{border-color:var(--gold-light);box-shadow:0 0 15px 
     </div>
   </div>
 
+<div class="section-header"><h3>◈ موعد المناقشة وموقعها ◈</h3></div>
   <!-- EVENT INFO BOXES -->
   <div class="event-info-wrapper">
     <!-- Row 1: Date + Time -->
@@ -471,8 +493,8 @@ textarea#congrats-text:focus{border-color:var(--gold-light);box-shadow:0 0 15px 
   </div>
 
   <!-- COUNTDOWN -->
+	<div class="section-header"><h3>◈ العد التنازلي للمناقشة ◈</h3></div> 
   <div class="countdown-section">
-    <div class="countdown-title">◈ العد التنازلي للمناقشة ◈</div>
     <div id="countdown-done" class="countdown-done" style="display:none;">تمت المناقشة بحمد الله وتوفيقه 🎓</div>
     <div id="countdown-live">
       <div class="countdown-grid">
